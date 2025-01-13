@@ -1,0 +1,37 @@
+
+
+/* Color Palette */
+:root{
+    /* Light Theme */
+    --color-primary: #092327;
+    --color-secundary: #0b5351;
+    --color-tertiary: #4e8098;
+    --color-text: #222;
+    --color-background: #f9f9f9;
+    --font-family: ;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --color-primary: #1B1B1B;
+    --color-secundary: #3D3D3D;
+    --color-tertiary: #737373;
+    --color-text: #f9f9f9;
+    --color-background: #222;
+    --font-family: ;
+}
+
+
+/* Resets */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    text-decoration: none;
+    list-style: none;
+}
+
+main{
+    min-height: 20vh;
+}
