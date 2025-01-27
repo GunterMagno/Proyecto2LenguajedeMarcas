@@ -6,6 +6,7 @@
     --color-tertiary: #4e8098;
     --color-text: #222;
     --color-background: #f9f9f9;
+    --color-border: #8e8c8c;
     --font-family: 'Arial', sans-serif;
 }
 
@@ -16,6 +17,7 @@
     --color-tertiary: #737373;
     --color-text: #f9f9f9;
     --color-background: #222;
+    --color-border: #8e8c8c;
     --font-family: 'Arial', sans-serif;
 }
 
@@ -66,6 +68,7 @@ header form input {
 
 header nav ul {
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -170,7 +173,7 @@ header nav ul li a img {
     margin: 1rem;
     border: 0.2rem solid var(--color-secundary);
     border-radius: 0.8rem;
-    background-color: #fff;
+    background-color: var(--color-background);
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -236,7 +239,7 @@ header nav ul li a img {
     border: 0.2rem solid var(--color-primary);
     border-radius: 0.8rem;
     padding: 1rem;
-    background-color: #fff;
+    background-color: var(--color-background);
     color: var(--color-primary);
     transition: transform 0.3s ease;
 }
@@ -308,7 +311,7 @@ header nav ul li a img {
     padding: 1rem 2rem;
     font-size: 1.5rem;
     background-color: var(--color-secundary);
-    color: #fff;
+    color: var(--color-background);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -337,9 +340,6 @@ header nav ul li a img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.5rem;
-    border: 2px solid gray;
-    border-radius: 10px;
     background-color: var(--color-background);
     margin-bottom: 2.5rem;
     width: 100%;
@@ -369,9 +369,9 @@ header nav ul li a img {
 .imagen-categoria {
     flex: 0 0 40%;
     padding: 1.8rem;
-    border: 2px solid #a5a5a5;
+    border: 2px solid var(--color-border);
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -398,7 +398,7 @@ header nav ul li a img {
 /* Estilos para cada producto */
 .producto1 {
     width: 30%;
-    border: 1px solid #a5a5a5;
+    border: 3px solid var(--color-border);
     border-radius: 10px;
     background-color: white;
     text-align: center;
@@ -421,7 +421,7 @@ header nav ul li a img {
     font-size: 1.8rem;
     font-weight: bold;
     margin-top: 1.5rem;
-    color: #4e8098;
+    color: var(--color-tertiary);
 }
 
 
@@ -549,7 +549,7 @@ header nav ul li a img {
 /* Formulario */
 .formulario-seccion {
     padding: 3rem;
-    background-color: white;
+    background-color: var(--color-background);
     max-width: 800px;
     margin: 2rem auto;
     border-radius: 10px;
@@ -559,7 +559,7 @@ header nav ul li a img {
 .formulario-seccion h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #333;
+    color: var(--color-text);
 }
 
 .formulario label {
@@ -573,7 +573,7 @@ header nav ul li a img {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 5px;
 }
 
@@ -582,8 +582,8 @@ header nav ul li a img {
 }
 
 .formulario button {
-    background-color: #333;
-    color: white;
+    background-color: #44a348;
+    color: var(--color-text);
     padding: 1rem;
     border: none;
     border-radius: 5px;
@@ -593,7 +593,7 @@ header nav ul li a img {
 }
 
 .formulario button:hover {
-    background-color: #555;
+    background-color: var(--color-tertiary);
 }
 
 /* Redes sociales */
@@ -605,23 +605,23 @@ header nav ul li a img {
 .redes-sociales h2 {
     margin-bottom: 1.5rem;
     font-size: 2rem;
-    color: #333;
+    color: var(--color-text);
 }
 
 .redes-lista {
-    list-style-type: none;
     display: flex;
     justify-content: center;
     gap: 2rem;
+    img{
+        width: 5vh;
+    }
 }
 
-.redes-lista li {
-    display: inline;
-}
 
 .redes-lista a {
-    color: #333;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
     font-size: 1.2rem;
     font-weight: bold;
     transition: color 0.3s;
@@ -634,7 +634,7 @@ header nav ul li a img {
 /* Nuestros Servicios */
 .nuestros-servicios {
     padding: 3rem;
-    background-color: white;
+    background-color: var(--color-background);
     margin: 2rem auto;
     max-width: 800px;
     border-radius: 10px;
@@ -645,13 +645,13 @@ header nav ul li a img {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
-    color: #333;
+    color: var(--color-text);
 }
 
 .nuestros-servicios p {
     text-align: center;
     margin-bottom: 2rem;
-    color: #666;
+    color: var(--color-text);
 }
 
 .lista-servicios {
@@ -666,11 +666,11 @@ header nav ul li a img {
 
 .lista-servicios h3 {
     font-size: 1.8rem;
-    color: #333;
+    color: var(--color-text);
 }
 
 .lista-servicios p {
-    color: #666;
+    color: var(--color-text);
     font-size: 1.2rem;
 }
 
@@ -683,7 +683,7 @@ footer {
     align-items: flex-start;
     padding: 2rem;
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-background);
     width: 100%;
     min-height: 20vh;
 }
@@ -719,14 +719,14 @@ footer {
 
 .contacto-footer h3 {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--color-background);
     text-decoration: underline;
     margin-bottom: 1rem;
 }
 
 .contacto-footer p {
     font-size: 1rem;
-    color: #fff;
+    color: var(--color-background);
     display: flex;
     align-items: center;
 }
@@ -742,6 +742,15 @@ footer {
     header {
         flex-direction: column;
         text-align: center;
+
+        .logo{
+            width: 15vh;
+        }
+
+        nav ul li a img, .boton-busqueda img {
+            width: 3vh;
+        }
+
     }
 
     .opcion-menu {
@@ -756,6 +765,14 @@ footer {
     .imagen-introduccion, .imagen-destacada-img {
         width: 80%;
         margin-bottom: 2rem;
+    }
+
+
+    .texto-introduccion{
+        width: 80%;
+        p {
+            font-size: 1.5rem;
+        }
     }
 
     .productos-destacados h2 {
@@ -774,10 +791,23 @@ footer {
 
     footer {
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-footer{
+        width: 15vh;
+        margin: 0;
+    }
+
+    .informacion-footer{
+        width: 80%;
     }
 
     .contacto-footer {
         text-align: center;
+        margin-right: 10vw;
     }
     .producto img {
         width: 90%;
@@ -785,6 +815,21 @@ footer {
     .producto-distribuido {
         padding: 2rem;
     }
+
+    .producto1{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        p{
+            font-size: 1.6rem;
+        }
+        img{
+            width: 20vh;
+        }
+    }
+
 
     .titulo-categoria {
         font-size: 2.8rem;
@@ -804,8 +849,12 @@ footer {
     }
 
     .producto {
-        width: 45%;
+        width: 90%;
+        img{
+            width: 100%;
+        }
     }
+
     .titulo-seccion {
         font-size: 2.5rem;
         margin-bottom: 2rem;
@@ -857,6 +906,10 @@ footer {
         width: 90%;
     }
 
+    .texto-introduccion p{
+        font-size: 1rem;
+    }
+
     .galeria-productos {
         grid-template-columns: 1fr;
     }
@@ -869,6 +922,19 @@ footer {
 
     .producto {
         width: 90%;
+    }
+
+    .productos-lista{
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto1{
+        width: 100%;
+
     }
 }
 
