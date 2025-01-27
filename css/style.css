@@ -194,7 +194,8 @@ header nav ul li a img {
     object-fit: cover;
     width: 100%;
     padding: 0.5rem;
-    border-bottom: 0.2rem solid var(--color-secundary);
+    border-bottom: 1px solid var(--color-secundary);
+    border-radius: 5%;
 }
 
 .opcion-menu h3 {
@@ -361,9 +362,11 @@ header nav ul li a img {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 100%;
     gap: 2.5rem;
 }
+
 
 /* Imagen Categoria */
 .imagen-categoria {
@@ -388,6 +391,7 @@ header nav ul li a img {
 .productos-lista {
     flex: 1;
     display: flex;
+    max-height: fit-content;
     justify-content: center;
     gap: 2.5rem;
     padding: 1.8rem;
@@ -400,6 +404,7 @@ header nav ul li a img {
     width: 30%;
     border: 3px solid var(--color-border);
     border-radius: 10px;
+    padding: 1rem;
     background-color: white;
     text-align: center;
     box-sizing: border-box;
