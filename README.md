@@ -42,3 +42,27 @@ En **Gunter's Forge** cada espada es una obra de arte. Nuestro equipo de herrero
 
 - HTML
 - CSS
+
+  
+## Validación
+
+Este proyecto ha sido validado utilizando las herramientas del W3C para asegurarse de que el código cumpla con los estándares web.
+
+### Validación de HTML
+
+1. El código HTML ha sido validado utilizando el [Validador HTML del W3C](https://validator.w3.org/).
+2. Se corrigieron errores relacionados con la estructura semántica, como el uso adecuado de etiquetas `<header>`, `<footer>`, `<article>`, y `<section>`.
+3. **Errores mínimos encontrados**:
+   - Se recomienda usar la etiqueta `<h1>` solo como encabezado principal.
+   - Falta un encabezado (`<h2>` a `<h6>`) en algunas secciones.
+   - Algunos artículos carecen de un encabezado (`<h2>` a `<h6>`).
+
+### Validación de CSS
+
+1. El código CSS ha sido validado utilizando el [Validador CSS del W3C](https://jigsaw.w3.org/css-validator/).
+2. Se optimizó el código para eliminar reglas redundantes y mejorar la eficiencia.
+3. **Errores encontrados**:
+   - Error de sintaxis (Parse Error).
+   - La propiedad `animation-range` no existe.
+Estos errores se deben a las animaciones de scroll que hay.
+
