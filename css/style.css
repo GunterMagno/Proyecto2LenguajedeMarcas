@@ -125,9 +125,10 @@ header nav ul li a img {
 .introduccion {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 3rem 5%;
+    justify-content: space-around;
+    padding: 3rem;
     margin-top: 5vh;
+    margin-right: 10vw;
 }
 
 .introduccion-contenido{
@@ -137,13 +138,14 @@ header nav ul li a img {
 }
 
 .imagen-introduccion {
-    width: 45%;
+    width: 30vw;
     height: auto;
     border-radius: 0.8rem;
 }
 
 .texto-introduccion {
     width: 50%;
+    font-size: 1.4rem;
 }
 
 .texto-introduccion h1 {
@@ -153,7 +155,7 @@ header nav ul li a img {
 }
 
 .texto-introduccion p {
-    font-size: 1.2rem;
+
     color: var(--color-secundary);
 }
 
@@ -427,6 +429,14 @@ header nav ul li a img {
     margin-top: 2rem;
 }
 
+.producto1 a{
+    color: var(--color-text);
+}
+
+.producto1 a:hover{
+    transform: translateY(-1rem);
+}
+
 .precio1 {
     font-size: 1.8rem;
     font-weight: bold;
@@ -437,16 +447,17 @@ header nav ul li a img {
 
 /* Proceso Artesanal */
 .proceso-artesanal {
-    padding: 4rem 8%;
-    background: var(--color-background);
+    padding: 5rem;
+    background: var(--color-secundary);
     text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 4rem 0 4rem 10vw;
+    width: 80%;
+    border-radius: 2rem;
 }
 
 .titulo-seccion {
     font-size: 3rem;
-    color: var(--color-primary);
+    color: var(--color-background);
     margin-bottom: 3rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -467,15 +478,11 @@ header nav ul li a img {
     background-color: var(--color-background);
     border: 1px solid var(--color-secundary);
     border-radius: 15px;
-    padding: 3rem 2rem;
-    width: 80%;
-    max-width: 800px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 3rem 1rem;
+    max-width: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .paso:hover {
@@ -485,10 +492,10 @@ header nav ul li a img {
 
 /* Imagen dentro de cada paso */
 .paso img {
-    max-width: 45%;
-    height: auto;
+    width: 100%;
+    max-height: 30vh;
+    margin: 0.3rem;
     border-radius: 10px;
-    margin-left: 2rem;
 }
 
 /* Títulos de cada paso */
@@ -533,7 +540,7 @@ header nav ul li a img {
 .testimonio {
     background: var(--color-background);
     color: var(--color-text);
-    padding: 3rem;
+    padding: 5rem;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     max-width: 600px;
@@ -664,6 +671,12 @@ header nav ul li a img {
     color: var(--color-text);
 }
 
+.nuestros-servicios h3 {
+    font-size: 2rem;
+    text-decoration: underline;
+    padding: 0.5vw;
+}
+
 .lista-servicios {
     list-style-type: none;
     padding: 0;
@@ -748,7 +761,18 @@ footer {
 
 
 /* Media Queries */
-@media (max-width: 768px) {
+
+@media (max-width: 1400px){
+    .producto1{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 45%;
+    }
+}
+
+@media (max-width: 900px) {
     header {
         flex-direction: column;
         text-align: center;
@@ -820,6 +844,7 @@ footer {
         text-align: center;
         margin-right: 10vw;
     }
+
     .producto img {
         width: 90%;
     }
@@ -912,7 +937,7 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .opcion-menu {
         width: 90%;
     }
@@ -949,3 +974,168 @@ footer {
     }
 }
 
+/* Animacion */
+
+@keyframes show {
+    0%{
+        opacity: 0;
+        scale: 25%;
+    }
+
+    50%{
+        translateY(100rem)
+    }
+
+    100%{
+        opacity: 1;
+        scale: 100%;
+        translateY(10rem)
+    }
+}
+
+.producto{
+    view-timeline-name: --animacion;
+    view-timeline-axis: block;
+
+    animation-timeline: --animacion;
+    animation-name: show;
+
+    animation-range: entry 5% cover 40%;
+
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide{
+    0% {
+        opacity: 0;
+        transform: translateX(-500px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.introduccion {
+    opacity: 0;
+    animation: slide 1.5s ease-out forwards;
+}
+
+
+@keyframes up-bounce {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    70% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.menu-principal,
+.opcion-menu {
+    animation: up-bounce 1s ease-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes showFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50rem) scale(0.5);
+    }
+
+    25%{
+        translateY(200rem)
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(-25rem) scale(0.75);
+        translateY(10rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        translateY(0rem)
+    }
+}
+
+@keyframes showFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50rem) scale(0.5);
+    }
+
+    25%{
+        translateY(20rem)
+    }
+
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(25rem) scale(0.75);
+        translateY(10rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        translateY(0rem)
+    }
+}
+
+.producto-distribuido {
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 0.3s ease-out;
+}
+
+
+.producto-distribuido:nth-child(odd) {
+    animation: showFromLeft 1s ease-out forwards;
+    animation-delay: 0.2s;
+
+    view-timeline-name: --animacion1;
+    view-timeline-axis: block;
+
+    animation-timeline: --animacion1;
+    animation-name: showFromLeft;
+
+    animation-range: entry 5% cover 40%;
+
+    animation-fill-mode: both;
+
+}
+
+.producto-distribuido:nth-child(even) {
+    animation: showFromRight 1s ease-out forwards;
+    animation-delay: 0.2s;
+
+    view-timeline-name: --animacion2;
+    view-timeline-axis: block;
+
+    animation-timeline: --animacion2;
+    animation-name: showFromRight;
+
+    animation-range: entry 3% cover 20%;
+
+    animation-fill-mode: both;
+}
