@@ -8,11 +8,14 @@
 </head>
 <body>
 <header>
+  <!-- Logo de la tienda -->
   <a href="index.html"><img class="logo" src="img/logo.png" alt="logo"></a>
   <h1>La Forja de Gunter</h1>
   <nav>
+    <!-- Menú de navegación con iconos de acceso rápido -->
     <ul>
       <li>
+        <!-- Formulario de búsqueda -->
         <form class="formulario-busqueda">
           <input class="input-busqueda" type="text" name="busqueda" placeholder="Buscar">
           <button class="boton-busqueda" type="button">
@@ -20,18 +23,21 @@
           </button>
         </form>
       </li>
-      <li><a href="soporte.html"><img src="img/pregunta.png" alt="Imagen Contacto"></a></li>
+      <!-- Enlaces a soporte, carrito, cuenta y página principal -->
+      <li><a href="contacto.html"><img src="img/pregunta.png" alt="Imagen Contacto"></a></li>
       <li><a href="carrito.html"><img src="img/carrito.png" alt="Imagen Carrito"></a></li>
+      <li><a href="cuenta.html"><img src="img/usuario.png" alt="Cuenta"></a></li>
       <li><a href="index.html"><img src="img/casa.png" alt="Imagen Casa"></a></li>
     </ul>
   </nav>
 </header>
 
-
 <main>
+  <!-- Sección de formulario de contacto -->
   <section class="formulario-seccion">
     <h2>Formulario de Contacto</h2>
     <form class="formulario">
+      <!-- Campos del formulario de contacto -->
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" name="nombre" required>
 
@@ -50,79 +56,60 @@
       <label for="fecha">Fecha de contacto:</label>
       <input type="date" id="fecha" name="fecha" required>
 
-      <button type="submit">Enviar</button>
+      <!-- Botón para enviar el formulario -->
+      <button type="submit" class="boton-guardar-cambios">Enviar</button>
     </form>
   </section>
 
+  <!-- Sección de servicios especializados -->
+  <section class="nuestros-servicios">
+    <h2>Servicios Especializados</h2>
+    <ul>
+      <!-- Detalles de cada servicio -->
+      <li>
+        <h3>Atención al Cliente</h3>
+        <p>Descripción del servicio de atención al cliente.</p>
+      </li>
+      <li>
+        <h3>Personalización de Productos</h3>
+        <p>Descripción de la personalización de productos.</p>
+      </li>
+      <li>
+        <h3>Envío Internacional</h3>
+        <p>Descripción del servicio de envío internacional.</p>
+      </li>
+      <li>
+        <h3>Garantía y Devoluciones</h3>
+        <p>Descripción de la garantía y devoluciones.</p>
+      </li>
+      <li>
+        <h3>Consultas Especializadas</h3>
+        <p>Descripción de las consultas especializadas.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sección de redes sociales -->
   <section class="redes-sociales">
     <h2>Síguenos en nuestras redes sociales</h2>
     <ul class="redes-lista">
+      <!-- Enlaces a redes sociales -->
       <li><a href="#" class="redes-facebook"><img src="img/facebook.png" alt="facebook">Facebook</a></li>
       <li><a href="#" class="redes-twitter"><img src="img/twitter.png" alt="twitter">Twitter</a></li>
       <li><a href="#" class="redes-instagram"><img src="img/instagram.png" alt="instagram">Instagram</a></li>
     </ul>
   </section>
-
-  <section class="nuestros-servicios">
-    <h2>Servicios Especializados</h2>
-    <ul>
-      <li>
-        <h3>Atención al Cliente</h3>
-        <p>
-          Nuestro equipo de atención al cliente está disponible para resolver todas tus dudas y necesidades.
-          Ya sea que necesites ayuda con tu pedido, información sobre nuestros productos, o simplemente asesoramiento,
-          puedes contactarnos a través de nuestro correo electrónico, teléfono o redes sociales. Estamos comprometidos a
-          brindarte una experiencia excepcional en cada interacción.
-        </p>
-      </li>
-      <li>
-        <h3>Personalización de Productos</h3>
-        <p>
-          ¿Quieres una katana o espada verdaderamente única? Ofrecemos un servicio de personalización que te permite
-          grabar nombres, símbolos o diseños exclusivos en tu hoja o empuñadura. Nuestro equipo de artesanos expertos
-          trabajará contigo para crear una pieza que sea tan especial como tú. Contáctanos para discutir tus ideas y
-          convertirlas en realidad.
-        </p>
-      </li>
-      <li>
-        <h3>Envío Internacional</h3>
-        <p>
-          No importa en qué parte del mundo te encuentres, hacemos que nuestras katanas y espadas lleguen hasta ti.
-          Trabajamos con las mejores compañías de envío para garantizar que tu pedido llegue de forma segura y a tiempo.
-          Además, puedes elegir entre distintas opciones de envío según tu presupuesto y necesidades. Consulta nuestras tarifas
-          y tiempos de entrega para más detalles.
-        </p>
-      </li>
-      <li>
-        <h3>Garantía y Devoluciones</h3>
-        <p>
-          Tu satisfacción es nuestra prioridad absoluta. Por eso, ofrecemos una garantía en todos nuestros productos para
-          asegurar que cumplan con los más altos estándares de calidad. Si por algún motivo no estás completamente satisfecho
-          con tu compra, consulta nuestra política de devoluciones para realizar cambios o reembolsos. Queremos que confíes
-          plenamente en cada compra que realices con nosotros.
-        </p>
-      </li>
-      <li>
-        <h3>Consultas Especializadas</h3>
-        <p>
-          Elegir la katana o espada adecuada puede ser un desafío, especialmente si es tu primera compra o buscas algo específico.
-          Por eso, contamos con un equipo de expertos que están disponibles para responder tus preguntas y ofrecerte recomendaciones
-          personalizadas según tus necesidades, preferencias y presupuesto. No dudes en pedir una consulta con nosotros para encontrar
-          la pieza perfecta.
-        </p>
-      </li>
-    </ul>
-  </section>
-
-
 </main>
+
+<!-- Sección de pie de página -->
 <footer>
   <img class="logo-footer" src="img/logo.png" alt="Logo">
   <section class="informacion-footer">
-    <p>Gracias por visitar nuestra tienda de espadas, especializada en la fabricación y diseño de espadas artesanales de alta calidad. Nos enorgullece ofrecer productos únicos hechos con los mejores materiales, ideales para coleccionistas, entusiastas de la esgrima o como piezas decorativas. Si tienes alguna duda o necesitas más información sobre nuestros productos, no dudes en ponerte en contacto con nosotros.</p>
+    <p>Información sobre la tienda y contacto.</p>
   </section>
   <article class="contacto-footer">
     <h3>Contactanos</h3>
+    <!-- Información de contacto -->
     <p><img class="img-contacto" src="img/telefono.png" alt="Imagen teléfono"> Tlf: 666 69 33 24</p>
     <p><img class="img-contacto" src="img/ubicacion.png" alt="Imagen ubicación"> C/MiraSierra Aceituna Nº33</p>
     <p><img class="img-contacto" src="img/correo.png" alt="Imagen correo"> gunters3dforge@gmail.com</p>

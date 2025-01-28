@@ -36,6 +36,8 @@ body {
     color: var(--color-text);
 }
 
+
+
 /* Header */
 header {
     display: flex;
@@ -55,8 +57,10 @@ header .logo {
 
 header h1 {
     text-align: center;
-    font-size: 2.5rem;
-    margin: 0;
+
+    margin-left: 8.5vw;
+    font-size: 3rem;
+
     color: var(--color-primary);
 }
 
@@ -79,6 +83,7 @@ header nav ul li a img {
     width: 2vw;
     height: auto;
 }
+
 
 
 /* Formularios de búsqueda */
@@ -168,6 +173,7 @@ header nav ul li a img {
 }
 
 
+
 /* Menú principal */
 .menu-principal {
     text-align: center;
@@ -234,6 +240,7 @@ header nav ul li a img {
 
     color: var(--color-secundary);
 }
+
 
 
 /* Productos destacados */
@@ -308,6 +315,8 @@ header nav ul li a img {
 
     color: var(--color-secundary);
 }
+
+
 
 /* Imagen destacada */
 .imagen-destacada {
@@ -387,6 +396,7 @@ header nav ul li a img {
 }
 
 
+
 /* Artículo principal */
 .producto-distribuido {
     display: flex;
@@ -401,6 +411,8 @@ header nav ul li a img {
     background-color: var(--color-background);
 }
 
+
+
 /* Título principal */
 .titulo-categoria {
     text-align: center;
@@ -412,6 +424,8 @@ header nav ul li a img {
     line-height: 1.3;
 }
 
+
+
 /* Contenedor para imagen y productos */
 .productos-lista-container {
     display: flex;
@@ -422,6 +436,7 @@ header nav ul li a img {
     width: 100%;
     gap: 2.5rem;
 }
+
 
 
 /* Imagen Categoria */
@@ -447,6 +462,8 @@ header nav ul li a img {
     border-radius: 5px;
 }
 
+
+
 /* Lista de productos */
 .productos-lista {
     flex: 1;
@@ -461,6 +478,8 @@ header nav ul li a img {
 
     max-height: fit-content;
 }
+
+
 
 /* Estilos para cada producto */
 .producto1 {
@@ -508,13 +527,14 @@ header nav ul li a img {
 }
 
 
+
 /* Proceso Artesanal */
 .proceso-artesanal {
     text-align: center;
 
     padding: 5rem;
-    margin: 4rem 0 4rem 10vw;
-    width: 80%;
+    margin: 3vw 0 10vw 18vw;
+    width: 70%;
 
     border-radius: 2rem;
 
@@ -527,7 +547,7 @@ header nav ul li a img {
 
     margin-bottom: 3rem;
 
-    color: var(--color-background);
+    color: var(--color-text);
 }
 
 .lista-pasos {
@@ -539,6 +559,8 @@ header nav ul li a img {
     padding: 0;
     gap: 3rem;
 }
+
+
 
 /* Estilo para cada paso */
 .paso {
@@ -563,6 +585,8 @@ header nav ul li a img {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+
+
 /* Imagen dentro de cada paso */
 .paso img {
     width: 100%;
@@ -572,6 +596,8 @@ header nav ul li a img {
 
     border-radius: 10px;
 }
+
+
 
 /* Títulos de cada paso */
 .paso h3 {
@@ -583,6 +609,8 @@ header nav ul li a img {
     color: var(--color-primary);
 }
 
+
+
 /* Descripción de cada paso */
 .paso p {
     font-size: 1.3rem;
@@ -591,62 +619,79 @@ header nav ul li a img {
     color: var(--color-text);
 }
 
+
+
 /* Testimonios */
-.seccion-testimonios {
+.testimonios {
     text-align: center;
+    align-content: center;
+    overflow: hidden;
 
-    padding: 3rem 5%;
-
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    background-color: var(--color-secundary);
-    color: var(--color-background);
+    background-color: var(--color-tertiary);
 }
 
-.titulo-seccion-testimonios {
-    font-size: 2.8rem;
-    margin-bottom: 2.5rem;
-    color: var(--color-primary);
+.testimonios h2{
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: underline;
+
+    height: 10vh;
+
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+
+    text-align: center;
 }
 
+
+
+/* Slider */
 .slider-testimonios {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
     gap: 2rem;
+    width: 100%;
+    animation: scroll-horizontal 120s linear infinite;
 }
 
 .testimonio {
+    flex-shrink: 0;
     text-align: left;
 
-    padding: 5rem;
-    max-width: 600px;
-    width: 80%;
-    min-height: 250px;
+    padding: 1.5rem;
+    margin: 3rem;
 
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    min-width: 25rem;
+    max-width: 35rem;
+    height: 10rem;
 
     background: var(--color-background);
-    color: var(--color-text);
+    color: var(--color-primary);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 
     transition: transform 0.3s ease;
 }
 
+
+.testimonio:hover {
+    transform: scale(1.05);
+}
+
 .testimonio p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.8;
 
     margin-bottom: 1rem;
 }
 
 .testimonio h3 {
+    font-size: 1.5rem;
     text-align: right;
-    font-size: 1.6rem;
+
     color: var(--color-tertiary);
 }
+
 
 
 /* Formulario */
@@ -656,7 +701,8 @@ header nav ul li a img {
     margin: 2rem auto;
 
     border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--color-secundary);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 
     background-color: var(--color-background);
 }
@@ -694,18 +740,20 @@ header nav ul li a img {
     width: 100%;
     cursor: pointer;
 
+    font-size: 1.2rem;
+
     border: none;
     border-radius: 5px;
 
-    background-color: #44a348;
     color: var(--color-text);
-
-    transition: background-color 0.3s;
 }
 
 .formulario button:hover {
-    background-color: var(--color-tertiary);
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
 }
+
+
 
 /* Redes sociales */
 .redes-sociales {
@@ -725,11 +773,11 @@ header nav ul li a img {
     justify-content: center;
 
     gap: 2rem;
-    img{
-        width: 5vh;
-    }
 }
 
+.redes-lista img{
+    width: 5vh;
+}
 
 .redes-lista a {
     display: flex;
@@ -747,6 +795,8 @@ header nav ul li a img {
     color: #0073e6;
 }
 
+
+
 /* Nuestros Servicios */
 .nuestros-servicios {
     max-width: 800px;
@@ -756,7 +806,8 @@ header nav ul li a img {
 
 
     border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--color-secundary);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 
     background-color: var(--color-background);
 }
@@ -796,6 +847,145 @@ header nav ul li a img {
     font-size: 1.2rem;
     color: var(--color-text);
 }
+
+
+
+/* Pagina Configuracion */
+.nav-config{
+    padding: 2vw 1vw;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15vh;
+}
+
+.perfil {
+    width: 95%;
+    margin: 8vw 0 0 2vw;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    border-bottom: var(--color-border) solid 2px;
+    padding-bottom: 0.5vw;
+    align-items: center;
+    justify-content: left;
+}
+
+.perfil img {
+    width: 2vw;
+    height: auto;
+    padding-right: 0.5vw;
+}
+
+.nav-config nav{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.nav-config img{
+    width: 2vw;
+    padding: 1vh;
+    background-color: inherit;
+}
+
+.nav-config li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.form-config {
+    padding: 2rem;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 40vw;
+    width: 100%;
+    margin: 0 0 1rem 15vw;
+
+}
+
+.formulario label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.formulario input:focus {
+    outline: none;
+    border-color: var(--color-text);
+    box-shadow: 0 0 5px rgba(73, 99, 191, 0.5);
+}
+
+.botones {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.boton-guardar-cambios,.boton-cancelar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-cancelar img{
+    transform: rotate(45deg);
+}
+
+.boton-guardar-cambios {
+    background-color: #44a348;
+}
+
+.boton-cancelar {
+    background-color: #c31d1d;
+}
+.boton-guardar-cambios:hover, .boton-cancelar:hover {
+    transform: scale(1.1);
+    transition: all ease 0.3s;
+}
+
+.boton-cancelar:hover {
+    background-color: #c31d1d;
+}
+
+.boton-guardar-cambios:hover {
+    background-color: #44a348;
+}
+
+.form-config .formulario input[type="text"] {
+    margin-bottom: 20px;
+}
+
 
 
 /* Footer */
@@ -871,8 +1061,8 @@ footer {
 }
 
 
-/* Media Queries */
 
+/* Media Queries */
 @media (max-width: 1400px){
     .producto1{
         display: flex;
@@ -888,16 +1078,16 @@ footer {
     header {
         flex-direction: column;
         text-align: center;
-
-        .logo{
-            width: 15vh;
-        }
-
-        nav ul li a img, .boton-busqueda img {
-            width: 3vh;
-        }
-
     }
+
+    header .logo{
+        width: 15vh;
+    }
+
+    header nav ul li a img, .boton-busqueda img {
+        width: 3vh;
+    }
+
 
     .opcion-menu {
         width: 45%;
@@ -906,18 +1096,21 @@ footer {
     .introduccion, .imagen-destacada {
         flex-direction: column;
         padding: 2rem;
+        padding-left: 10vh;
     }
 
     .imagen-introduccion, .imagen-destacada-img {
         width: 80%;
         margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
     .texto-introduccion{
         width: 80%;
-        p {
-            font-size: 1.5rem;
-        }
+    }
+
+    .texto-introduccion p {
+        font-size: 1.5rem;
     }
 
     .productos-destacados h2 {
@@ -970,14 +1163,15 @@ footer {
         align-items: center;
 
         width: 80%;
-        p{
-            font-size: 1.6rem;
-        }
-        img{
-            width: 20vh;
-        }
     }
 
+    .producto1 p{
+        font-size: 1.6rem;
+    }
+
+    .producto1 img{
+        width: 20vh;
+    }
 
     .titulo-categoria {
         font-size: 2.8rem;
@@ -998,9 +1192,10 @@ footer {
 
     .producto {
         width: 90%;
-        img{
-            width: 100%;
-        }
+    }
+
+    .producto img{
+        width: 100%;
     }
 
     .titulo-seccion {
@@ -1014,6 +1209,7 @@ footer {
 
     .paso {
         min-width: 90%;
+        min-height: 35vh;
         padding: 2rem 1rem;
     }
 
@@ -1042,6 +1238,7 @@ footer {
 
     .testimonio {
         width: 95%;
+        font-size: 1rem;
     }
 
     .testimonio p {
@@ -1050,6 +1247,10 @@ footer {
 
     .testimonio h3 {
         font-size: 1.4rem;
+    }
+
+    .slider-testimonios {
+        gap: 1rem;
     }
 }
 
@@ -1099,12 +1300,20 @@ footer {
         min-width: 100%;
     }
 
+    .slider-testimonios {
+        gap: 1rem;
+    }
+
+    .testimonio {
+        font-size: 0.9rem;
+        height: 180px;
+    }
+
 }
 
 
 
 /* Animacion */
-
 @keyframes show {
     0%{
         opacity: 0;
@@ -1206,7 +1415,6 @@ footer {
         translateY(20rem)
     }
 
-
     50% {
         opacity: 0.5;
         transform: translateX(25rem) scale(0.75);
@@ -1254,4 +1462,27 @@ footer {
     animation-range: entry 25% cover 50%;
 
     animation-fill-mode: both;
+}
+
+/* Animación continua Testimonios */
+@keyframes scroll-horizontal {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    25%{
+        transform: translateX(60%);
+    }
+
+    50%{
+        transform: translateX(0%);
+    }
+
+    75%{
+        transform: translateX(-30%);
+    }
+
+    100% {
+        transform: translateX(-70%);
+    }
 }
