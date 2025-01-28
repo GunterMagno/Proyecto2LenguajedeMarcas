@@ -16,7 +16,53 @@ En **Gunter's Forge** cada espada es una obra de arte. Nuestro equipo de herrero
 - **Integración con redes sociales**: La página tiene botones de acceso directo a las redes sociales, permitiendo a los usuarios compartir productos y contenido con facilidad.
 - **Blog integrado**: Sección de blog donde se publican artículos relacionados con el proceso de fabricación, historia de las espadas y otros temas relevantes para los clientes interesados.
 
+# Instrucciones para visualizarlo
+
+### 1. Logo de la tienda (Encabezado)
+- **Enlace**: Redirige a la **página de inicio**.
+- **Ubicación**: En el encabezado, junto al título "La Forja de Gunter". El logo es un **enlace de texto**.
+
+### 2. Formulario de búsqueda (Encabezado)
+- Permite ingresar texto para realizar una búsqueda.
+- **Ubicación**: En el encabezado, dentro de un formulario con un ícono de **lupa**.
+
+### 3. Iconos (Encabezado)
+- **Icono de Pregunta**: Página de **Contacto**.
+- **Icono de Carrito**: Página del **Carrito**.
+- **Icono de Usuario**: Página de **Cuenta**.
+- **Icono de Casa**: Página de **Inicio**.
+
+### 4. Enlaces de navegación (Seccion: Menu principal)
+- **Productos**: Redirige a la página de **productos**.
+- **Blog**: Redirige a la página del **blog**.
+- **Contacto**: Redirige a la página de **contacto**.
+
+
 ## Tecnologías utilizadas
 
 - HTML
 - CSS
+
+  
+## Validación
+
+Este proyecto ha sido validado utilizando las herramientas del W3C para asegurarse de que el código cumpla con los estándares web.
+
+### Validación de HTML
+
+1. El código HTML ha sido validado utilizando el [Validador HTML del W3C](https://validator.w3.org/).
+2. Se corrigieron errores relacionados con la estructura semántica, como el uso adecuado de etiquetas `<header>`, `<footer>`, `<article>`, y `<section>`.
+3. **Errores mínimos encontrados**:
+   - Se recomienda usar la etiqueta `<h1>` solo como encabezado principal.
+   - Falta un encabezado (`<h2>` a `<h6>`) en algunas secciones.
+   - Algunos artículos carecen de un encabezado (`<h2>` a `<h6>`).
+
+### Validación de CSS
+
+1. El código CSS ha sido validado utilizando el [Validador CSS del W3C](https://jigsaw.w3.org/css-validator/).
+2. Se optimizó el código para eliminar reglas redundantes y mejorar la eficiencia.
+3. **Errores encontrados**:
+   - Error de sintaxis (Parse Error).
+   - La propiedad `animation-range` no existe.
+Estos errores se deben a las animaciones de scroll que hay.
+
