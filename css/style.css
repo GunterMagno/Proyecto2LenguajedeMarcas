@@ -41,7 +41,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 2vh 5%;
+
     background-color: var(--color-tertiary);
     border-bottom: 0.2rem solid var(--color-secundary);
 }
@@ -52,18 +54,19 @@ header .logo {
 }
 
 header h1 {
-    font-size: 2.5rem;
-    color: var(--color-primary);
     text-align: center;
+    font-size: 2.5rem;
     margin: 0;
+    color: var(--color-primary);
 }
 
 header form input {
     padding: 0.5rem;
+    width: 25vw;
     font-size: 1rem;
+
     border: 0.1rem solid var(--color-secundary);
     border-radius: 0.5rem;
-    width: 25vw;
 }
 
 header nav ul {
@@ -83,19 +86,23 @@ header nav ul li a img {
     display: flex;
     align-items: center;
     position: relative;
+
     margin-left: 1rem;
 }
 
 .input-busqueda {
     width: 0;
     opacity: 0;
+    font-size: 1rem;
+
+    padding: 0.5rem;
+    margin-right: 2rem;
+
     border: 0.1rem solid var(--color-secundary);
     border-radius: 0.5rem;
-    padding: 0.5rem;
-    font-size: 1rem;
+
     transition: all 0.3s ease;
     visibility: hidden;
-    margin-right: 2rem;
 }
 
 .input-busqueda:focus {
@@ -126,6 +133,7 @@ header nav ul li a img {
     display: flex;
     align-items: center;
     justify-content: space-around;
+
     padding: 3rem;
     margin-top: 5vh;
     margin-right: 10vw;
@@ -150,12 +158,12 @@ header nav ul li a img {
 
 .texto-introduccion h1 {
     font-size: 2rem;
-    color: var(--color-primary);
     margin-bottom: 1rem;
+
+    color: var(--color-primary);
 }
 
 .texto-introduccion p {
-
     color: var(--color-secundary);
 }
 
@@ -163,7 +171,9 @@ header nav ul li a img {
 /* Menú principal */
 .menu-principal {
     text-align: center;
-    padding: 3rem 5%;
+
+    padding: 3rem;
+
     background-color: var(--color-background);
     color: var(--color-primary);
 }
@@ -171,18 +181,23 @@ header nav ul li a img {
 .menu-principal h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+
     color: var(--color-primary);
 }
 
 .opcion-menu {
     display: inline-block;
-    width: 30%;
-    margin: 1rem;
-    border: 0.2rem solid var(--color-secundary);
-    border-radius: 0.8rem;
-    background-color: var(--color-background);
     overflow: hidden;
     text-align: center;
+
+    width: 30%;
+    margin: 1rem;
+
+    border: 0.2rem solid var(--color-secundary);
+    border-radius: 0.8rem;
+
+    background-color: var(--color-background);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -193,14 +208,17 @@ header nav ul li a img {
 
 .opcion-menu a {
     display: block;
-    color: var(--color-primary);
     padding: 1rem;
+
+    color: var(--color-primary);
 }
 
 .opcion-menu img {
     object-fit: cover;
+
     width: 100%;
     padding: 0.5rem;
+
     border-bottom: 1px solid var(--color-secundary);
     border-radius: 5%;
 }
@@ -212,43 +230,53 @@ header nav ul li a img {
 
 .opcion-menu p {
     font-size: 1rem;
-    color: var(--color-secundary);
     padding: 0 1rem;
+
+    color: var(--color-secundary);
 }
 
 
 /* Productos destacados */
 .productos-destacados {
-    padding: 3rem 5%;
+    padding: 3rem;
+
+    text-align: center;
+
     background-color: var(--color-tertiary);
     color: var(--color-background);
-    text-align: center;
 }
 
 .productos-destacados h2 {
+    text-align: center;
+
     font-size: 2.5rem;
     margin-bottom: 2rem;
+
     color: var(--color-primary);
-    text-align: center;
 }
 
 .galeria-productos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
     justify-items: center;
     flex-wrap: wrap;
+
+    gap: 1.5rem;
 }
 
 .producto {
     text-align: center;
+    padding: 1rem;
+
     max-width: 90%;
     width: 100%;
+
     border: 0.2rem solid var(--color-primary);
     border-radius: 0.8rem;
-    padding: 1rem;
+
     background-color: var(--color-background);
     color: var(--color-primary);
+
     transition: transform 0.3s ease;
 }
 
@@ -259,21 +287,26 @@ header nav ul li a img {
 .producto img {
     width: 50%;
     height: auto;
-    border-radius: 0.8rem;
+
     margin-bottom: 1rem;
+
+    border-radius: 0.8rem;
 }
 
 .producto p {
     font-size: 1rem;
-    color: var(--color-primary);
     margin-bottom: 0.5rem;
+
+    color: var(--color-primary);
 }
 
 .precio {
     font-size: 1.2rem;
-    color: var(--color-secundary);
     font-weight: bold;
+
     margin-top: 0.5rem;
+
+    color: var(--color-secundary);
 }
 
 /* Imagen destacada */
@@ -282,47 +315,56 @@ header nav ul li a img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
     padding: 3rem 5%;
     margin-top: 7.5vh;
     width: 100%;
-    text-align: center;
 }
 
 .imagen-destacada-img {
-    width: 100%;
-    height: auto;
-    max-height: 45vh;
     object-fit: cover;
     object-position: bottom;
     border-radius: 0.8rem;
+
+    width: 100%;
+    height: auto;
+    max-height: 45vh;
+
     margin-bottom: 2rem;
 }
 
 .descripcion-accion {
+    text-align: center;
+
     width: 100%;
     max-width: 80%;
     margin-bottom: 2rem;
     font-size: 1.1rem;
-    color: var(--color-secundary);
     line-height: 1.5;
-    text-align: center;
+
+    color: var(--color-secundary);
 }
 
 .boton-accion {
-    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 80%;
 }
 
 .boton-personalizado {
     padding: 1rem 2rem;
     font-size: 1.5rem;
+
+    cursor: pointer;
+
     background-color: var(--color-secundary);
     color: var(--color-background);
     border: none;
     border-radius: 0.5rem;
-    cursor: pointer;
+
     transition: background-color 0.3s ease;
 }
 
@@ -337,30 +379,36 @@ header nav ul li a img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
     padding: 2.5rem;
     width: 100%;
-    box-sizing: border-box;
-    justify-content: center;
 }
+
 
 /* Artículo principal */
 .producto-distribuido {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--color-background);
-    margin-bottom: 2.5rem;
+    box-sizing: border-box;
+
     width: 100%;
     max-width: 1600px;
-    box-sizing: border-box;
+    margin-bottom: 2.5rem;
+
+    background-color: var(--color-background);
 }
 
 /* Título principal */
 .titulo-categoria {
-    font-size: 3.2rem;
     text-align: center;
+
     margin-bottom: 2.5rem;
     width: 100%;
+
+    font-size: 3.2rem;
     line-height: 1.3;
 }
 
@@ -370,6 +418,7 @@ header nav ul li a img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
     width: 100%;
     gap: 2.5rem;
 }
@@ -377,20 +426,24 @@ header nav ul li a img {
 
 /* Imagen Categoria */
 .imagen-categoria {
-    flex: 0 0 40%;
-    padding: 1.8rem;
-    border: 2px solid var(--color-border);
-    border-radius: 10px;
-    background-color: var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 0 0 40%;
+
+    padding: 1.8rem;
     margin-bottom: 1.5rem;
+
+    background-color: var(--color-background);
+
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
 }
 
 .imagen-categoria img {
     width: 100%;
     height: auto;
+
     border-radius: 5px;
 }
 
@@ -398,29 +451,37 @@ header nav ul li a img {
 .productos-lista {
     flex: 1;
     display: flex;
-    max-height: fit-content;
     justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 1.5rem;
     gap: 2.5rem;
     padding: 1.8rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+
+    max-height: fit-content;
 }
 
 /* Estilos para cada producto */
 .producto1 {
-    width: 30%;
-    border: 3px solid var(--color-border);
-    border-radius: 10px;
-    padding: 1rem;
-    background-color: white;
     text-align: center;
     box-sizing: border-box;
+
+    width: 30%;
+
+    padding: 1rem;
     margin-bottom: 2.5rem;
+
+    border: 3px solid var(--color-border);
+    border-radius: 10px;
+
+    background-color: white;
 }
 
 .producto1 img {
     width: 100%;
     height: auto;
+
     border-radius: 5px;
 }
 
@@ -440,48 +501,60 @@ header nav ul li a img {
 .precio1 {
     font-size: 1.8rem;
     font-weight: bold;
+
     margin-top: 1.5rem;
+
     color: var(--color-tertiary);
 }
 
 
 /* Proceso Artesanal */
 .proceso-artesanal {
-    padding: 5rem;
-    background: var(--color-secundary);
     text-align: center;
+
+    padding: 5rem;
     margin: 4rem 0 4rem 10vw;
     width: 80%;
+
     border-radius: 2rem;
+
+    background: var(--color-secundary);
 }
 
 .titulo-seccion {
-    font-size: 3rem;
-    color: var(--color-background);
-    margin-bottom: 3rem;
-    text-transform: uppercase;
     font-weight: bold;
+    font-size: 3rem;
+
+    margin-bottom: 3rem;
+
+    color: var(--color-background);
 }
 
 .lista-pasos {
-    list-style: none;
-    padding: 0;
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    padding: 0;
+    gap: 3rem;
 }
 
 /* Estilo para cada paso */
 .paso {
-    background-color: var(--color-background);
+    text-align: left;
+
+    padding: 3rem 1rem;
+
+    max-width: 45%;
+    min-height: 50vh;
+
     border: 1px solid var(--color-secundary);
     border-radius: 15px;
-    padding: 3rem 1rem;
-    max-width: 50%;
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    background-color: var(--color-background);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -494,83 +567,98 @@ header nav ul li a img {
 .paso img {
     width: 100%;
     max-height: 30vh;
+
     margin: 0.3rem;
+
     border-radius: 10px;
 }
 
 /* Títulos de cada paso */
 .paso h3 {
     font-size: 2.2rem;
-    color: var(--color-primary);
     font-weight: bold;
+
     margin-bottom: 1rem;
+
+    color: var(--color-primary);
 }
 
 /* Descripción de cada paso */
 .paso p {
     font-size: 1.3rem;
-    color: var(--color-text);
     line-height: 1.7;
+
+    color: var(--color-text);
 }
 
 /* Testimonios */
 .seccion-testimonios {
-    background-color: var(--color-secundary);
-    color: var(--color-background);
-    padding: 3rem 5%;
     text-align: center;
+
+    padding: 3rem 5%;
+
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    background-color: var(--color-secundary);
+    color: var(--color-background);
 }
 
 .titulo-seccion-testimonios {
     font-size: 2.8rem;
     margin-bottom: 2.5rem;
     color: var(--color-primary);
-    text-transform: uppercase;
 }
 
 .slider-testimonios {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: center;
+
+    gap: 2rem;
 }
 
 .testimonio {
-    background: var(--color-background);
-    color: var(--color-text);
+    text-align: left;
+
     padding: 5rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     width: 80%;
     min-height: 250px;
-    text-align: left;
+
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    background: var(--color-background);
+    color: var(--color-text);
+
     transition: transform 0.3s ease;
 }
 
 .testimonio p {
     font-size: 1.3rem;
     line-height: 1.8;
+
     margin-bottom: 1rem;
 }
 
 .testimonio h3 {
+    text-align: right;
     font-size: 1.6rem;
     color: var(--color-tertiary);
-    text-align: right;
 }
 
 
 /* Formulario */
 .formulario-seccion {
-    padding: 3rem;
-    background-color: var(--color-background);
     max-width: 800px;
+    padding: 3rem;
     margin: 2rem auto;
+
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+    background-color: var(--color-background);
 }
 
 .formulario-seccion h2 {
@@ -581,31 +669,37 @@ header nav ul li a img {
 
 .formulario label {
     display: block;
-    margin-bottom: 0.5rem;
     font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 .formulario input,
 .formulario textarea {
     width: 100%;
+
     padding: 0.8rem;
     margin-bottom: 1rem;
+
     border: 1px solid var(--color-border);
     border-radius: 5px;
 }
 
 .formulario textarea {
-    height: 150px;
+    height: 15vh;
 }
 
 .formulario button {
-    background-color: #44a348;
-    color: var(--color-text);
     padding: 1rem;
-    border: none;
-    border-radius: 5px;
+
     width: 100%;
     cursor: pointer;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #44a348;
+    color: var(--color-text);
+
     transition: background-color 0.3s;
 }
 
@@ -615,19 +709,21 @@ header nav ul li a img {
 
 /* Redes sociales */
 .redes-sociales {
-    padding: 3rem 0;
     text-align: center;
+    padding: 3rem 0;
 }
 
 .redes-sociales h2 {
     margin-bottom: 1.5rem;
     font-size: 2rem;
+
     color: var(--color-text);
 }
 
 .redes-lista {
     display: flex;
     justify-content: center;
+
     gap: 2rem;
     img{
         width: 5vh;
@@ -638,9 +734,12 @@ header nav ul li a img {
 .redes-lista a {
     display: flex;
     align-items: center;
-    color: var(--color-text);
+
     font-size: 1.2rem;
     font-weight: bold;
+
+    color: var(--color-text);
+
     transition: color 0.3s;
 }
 
@@ -650,18 +749,24 @@ header nav ul li a img {
 
 /* Nuestros Servicios */
 .nuestros-servicios {
-    padding: 3rem;
-    background-color: var(--color-background);
-    margin: 2rem auto;
     max-width: 800px;
+
+    padding: 3rem;
+    margin: 2rem auto;
+
+
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+    background-color: var(--color-background);
 }
 
 .nuestros-servicios h2 {
+    text-align: center;
+
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    text-align: center;
+
     color: var(--color-text);
 }
 
@@ -674,13 +779,8 @@ header nav ul li a img {
 .nuestros-servicios h3 {
     font-size: 2rem;
     text-decoration: underline;
-    padding: 0.5vw;
-}
 
-.lista-servicios {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 1rem;
+    padding: 0.5vw;
 }
 
 .lista-servicios li {
@@ -693,10 +793,9 @@ header nav ul li a img {
 }
 
 .lista-servicios p {
-    color: var(--color-text);
     font-size: 1.2rem;
+    color: var(--color-text);
 }
-
 
 
 /* Footer */
@@ -704,19 +803,24 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
     padding: 2rem;
-    background-color: var(--color-primary);
-    color: var(--color-background);
+
     width: 100%;
     min-height: 20vh;
+
+    background-color: var(--color-primary);
+    color: var(--color-background);
 }
 
 .informacion-footer {
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding-top: 3vh;
     margin-left: 2vw;
+
     width: 40%;
 }
 
@@ -727,31 +831,38 @@ footer {
 }
 
 .logo-footer {
+    margin-left: 10rem;
+
     width: 12vw;
     height: auto;
-    margin-left: 10rem;
 }
 
 .contacto-footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 40%;
+
     padding-top: 3vh;
+
+    width: 40%;
 }
 
 .contacto-footer h3 {
     font-size: 1.5rem;
-    color: var(--color-background);
     text-decoration: underline;
+
     margin-bottom: 1rem;
+
+    color: var(--color-background);
 }
 
 .contacto-footer p {
-    font-size: 1rem;
-    color: var(--color-background);
     display: flex;
     align-items: center;
+
+    font-size: 1rem;
+
+    color: var(--color-background);
 }
 
 .contacto-footer img {
@@ -768,6 +879,7 @@ footer {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+
         width: 45%;
     }
 }
@@ -801,8 +913,6 @@ footer {
         margin-bottom: 2rem;
     }
 
-
-
     .texto-introduccion{
         width: 80%;
         p {
@@ -825,10 +935,11 @@ footer {
     }
 
     footer {
-        padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        padding: 1rem;
     }
 
     .logo-footer{
@@ -857,6 +968,7 @@ footer {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+
         width: 80%;
         p{
             font-size: 1.6rem;
@@ -896,15 +1008,19 @@ footer {
         margin-bottom: 2rem;
     }
 
-    .paso {
+    .lista-pasos{
         flex-direction: column;
-        width: 90%;
+    }
+
+    .paso {
+        min-width: 90%;
         padding: 2rem 1rem;
     }
 
     .paso img {
         max-width: 80%;
-        margin-left: 0;
+
+        margin-left: 5vw;
         margin-bottom: 1rem;
     }
 
@@ -961,18 +1077,30 @@ footer {
     }
 
     .productos-lista{
-        width: 100%;
-
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        width: 100%;
     }
 
     .producto1{
         width: 100%;
+    }
 
+    .imagen-introduccion{
+        width: 100%;
+
+        margin-top: 2rem;
+        margin-left: 3rem;
+    }
+
+    .paso{
+        min-width: 100%;
     }
 }
+
+
 
 /* Animacion */
 
@@ -995,7 +1123,6 @@ footer {
 
 .producto{
     view-timeline-name: --animacion;
-    view-timeline-axis: block;
 
     animation-timeline: --animacion;
     animation-name: show;
@@ -1025,14 +1152,14 @@ footer {
 @keyframes up-bounce {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(2rem);
     }
     50% {
         opacity: 1;
-        transform: translateY(-10px);
+        transform: translateY(-4rem);
     }
     70% {
-        transform: translateY(5px);
+        transform: translateY(3rem);
     }
     100% {
         transform: translateY(0);
@@ -1041,18 +1168,8 @@ footer {
 
 .menu-principal,
 .opcion-menu {
-    animation: up-bounce 1s ease-out forwards;
+    animation: up-bounce 5s ease-in-out;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 @keyframes showFromLeft {
@@ -1114,12 +1231,11 @@ footer {
     animation-delay: 0.2s;
 
     view-timeline-name: --animacion1;
-    view-timeline-axis: block;
 
     animation-timeline: --animacion1;
     animation-name: showFromLeft;
 
-    animation-range: entry 5% cover 40%;
+    animation-range: entry 25% cover 50%;
 
     animation-fill-mode: both;
 
@@ -1130,12 +1246,11 @@ footer {
     animation-delay: 0.2s;
 
     view-timeline-name: --animacion2;
-    view-timeline-axis: block;
 
     animation-timeline: --animacion2;
     animation-name: showFromRight;
 
-    animation-range: entry 3% cover 20%;
+    animation-range: entry 25% cover 50%;
 
     animation-fill-mode: both;
 }
