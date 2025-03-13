@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Forja de Gunter</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
@@ -23,6 +24,12 @@
             <img src="img/lupa-de-busqueda.png" alt="Lupa para buscar">
           </button>
         </form>
+      </li>
+      <li>
+        <!-- Boton para cambiar de tema -->
+        <a href="#" id="toggle-dark-mode">
+          <img id="theme-icon" src="img/luna.png" alt="Modo Oscuro">
+        </a>
       </li>
       <!-- Enlaces a contacto, carrito, cuenta y página principal -->
       <li><a href="contacto.html"><img src="img/pregunta.png" alt="Imagen Contacto"></a></li>
@@ -58,6 +65,9 @@
           <!-- Campos del formulario de perfil -->
           <label for="nombre-usuario">Nombre Usuario:</label>
           <input type="text" id="nombre-usuario" value="guntersito123">
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" value="guntersito123@gmail.com">
 
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" value="Ale">

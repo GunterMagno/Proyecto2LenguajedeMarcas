@@ -66,3 +66,34 @@ Este proyecto ha sido validado utilizando las herramientas del W3C para asegurar
    - La propiedad `animation-range` no existe.
 Estos errores se deben a las animaciones de scroll que hay.
 
+### Lenguajes de Script de Cliente
+
+Los lenguajes de script de cliente son aquellos que se ejecutan en el navegador del usuario. Los más comunes son:
+
+**JavaScript**: Es el lenguaje de script más utilizado en la web. Permite manipular el DOM, gestionar eventos y crear interactividad en las páginas web. Desde la llegada de ES6 (ECMAScript 2015), JavaScript ha incorporado características modernas como `let`, `const`, `arrow functions`, `template literals`, y más.
+
+**TypeScript**: Es un superset de JavaScript que añade tipado estático. Es especialmente útil en proyectos grandes para mejorar la mantenibilidad del código.
+
+### Métodos de Selección del DOM
+
+En este proyecto se han utilizado los siguientes métodos para seleccionar elementos del DOM:
+- **querySelector**: Selecciona el primer elemento que coincide con el selector. Útil para seleccionar un único elemento.
+- **querySelectorAll**: Selecciona todos los elementos que coinciden con el selector. Devuelve una NodeList.
+- **getElementById**: Selecciona un elemento por su ID. Es más rápido que `querySelector` para seleccionar por ID.
+
+# Ejemplos de Manipulación del DOM
+
+## 1. Seleccionar y Acceder a Elementos
+Se utilizan métodos como `querySelector`, `querySelectorAll` y `getElementById` para seleccionar y acceder a elementos del DOM.
+
+## 2. Crear y Añadir Nuevos Elementos
+Se crean nuevos elementos dinámicamente y se añaden al DOM.
+
+## 3. Modificar Contenido y Atributos
+Se modifican el contenido y los atributos de elementos existentes.
+
+## 4. Eliminar Elementos
+Se eliminan elementos del DOM según criterios específicos.
+
+## 5. Manipular Estilos
+Se manipulan estilos directamente desde JavaScript.  

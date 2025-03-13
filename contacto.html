@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Forja de Gunter</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
 <header>
@@ -23,6 +24,12 @@
           </button>
         </form>
       </li>
+      <li>
+        <!-- Boton para cambiar de tema -->
+        <a href="#" id="toggle-dark-mode">
+          <img id="theme-icon" src="img/luna.png" alt="Modo Oscuro">
+        </a>
+      </li>
       <!-- Enlaces a soporte, carrito, cuenta y página principal -->
       <li><a href="contacto.html"><img src="img/pregunta.png" alt="Imagen Contacto"></a></li>
       <li><a href="carrito.html"><img src="img/carrito.png" alt="Imagen Carrito"></a></li>
@@ -36,7 +43,7 @@
   <!-- Sección de formulario de contacto -->
   <section class="formulario-seccion">
     <h2>Formulario de Contacto</h2>
-    <form class="formulario">
+    <form class="formulario" id="formulario-contacto">
       <!-- Campos del formulario de contacto -->
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" name="nombre" required>

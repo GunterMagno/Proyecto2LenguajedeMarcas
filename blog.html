@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Forja de Gunter</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
 <header>
@@ -22,6 +23,12 @@
             <img src="img/lupa-de-busqueda.png" alt="Lupa para buscar">
           </button>
         </form>
+      </li>
+      <li>
+        <!-- Boton para cambiar de tema -->
+        <a href="#" id="toggle-dark-mode">
+          <img id="theme-icon" src="img/luna.png" alt="Modo Oscuro">
+        </a>
       </li>
       <!-- Enlaces a soporte, carrito, cuenta y página principal -->
       <li><a href="contacto.html"><img src="img/pregunta.png" alt="Imagen Contacto"></a></li>
@@ -120,6 +127,13 @@
     <!-- Título de la sección -->
     <h2 class="titulo-seccion">Lo que dicen nuestros clientes</h2>
 
+    <button class="boton-slider-anterior">
+      <img src="img/flecha-izquierda.png" alt="Anterior">
+    </button>
+    <button class="boton-slider-siguiente">
+      <img src="img/flecha-derecha.png" alt="Siguiente">
+    </button>
+
     <!-- Lista de testimonios -->
     <ul class="slider-testimonios">
       <!-- Testimonio 1 -->
@@ -148,7 +162,7 @@
 
       <!-- Testimonio 5 -->
       <li class="testimonio">
-        <p>"Definitivamente recomendaría esta tienda a cualquiera que busque artesanía única."</p>
+        <p>"Definitivamente, recomendaría esta tienda a cualquiera que busque artesanía única."</p>
         <h3>- Andrés Gómez</h3>
       </li>
 
@@ -178,6 +192,17 @@
     </ul>
   </section>
 
+  <!-- Sección de galería interactiva -->
+  <section class="galeria-seccion">
+    <h2>Galería Interactiva</h2>
+    <article class="galeria">
+      <!-- Las imágenes se añadirán dinámicamente aquí -->
+    </article>
+    <article class="controles-galeria">
+      <input type="text" id="url-imagen" placeholder="Introduce la URL de la imagen">
+      <button id="añadir-imagen">Añadir Imagen</button>
+    </article>
+  </section>
 
 </main>
 

@@ -8,17 +8,21 @@
     --color-background: #f9f9f9;
     --color-border: #8e8c8c;
     --font-family: 'Arial', sans-serif;
+
+    transition: background-color 0.5s, color 0.5s;
 }
 
 [data-theme="dark"] {
     /* Dark Theme */
-    --color-primary: #1B1B1B;
-    --color-secundary: #3D3D3D;
+    --color-primary: #515151;
+    --color-secundary: #bdbdbd;
     --color-tertiary: #737373;
     --color-text: #f9f9f9;
     --color-background: #222;
     --color-border: #8e8c8c;
     --font-family: 'Arial', sans-serif;
+
+    transition: background-color 0.5s, color 0.5s;
 }
 
 /* Resets */
@@ -510,7 +514,7 @@ header nav ul li a img {
 }
 
 .producto1 a{
-    color: var(--color-text);
+    color: var(--color-primary);
 }
 
 .producto1 a:hover{
@@ -623,11 +627,14 @@ header nav ul li a img {
 
 /* Testimonios */
 .testimonios {
+    position: relative;
     text-align: center;
     align-content: center;
     overflow: hidden;
 
     background-color: var(--color-tertiary);
+
+    padding: 2rem 0;
 }
 
 .testimonios h2{
@@ -651,7 +658,41 @@ header nav ul li a img {
     display: flex;
     gap: 2rem;
     width: 100%;
-    animation: scroll-horizontal 120s linear infinite;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+
+/* Botones de navegación */
+.boton-slider-anterior,.boton-slider-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+.boton-slider-anterior {
+    left: 1rem;
+}
+
+.boton-slider-siguiente {
+    right: 1rem;
+}
+
+.boton-slider-anterior img,.boton-slider-siguiente img {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background-color: transparent;
 }
 
 .testimonio {
@@ -1464,25 +1505,132 @@ footer {
     animation-fill-mode: both;
 }
 
-/* Animación continua Testimonios */
-@keyframes scroll-horizontal {
-    0% {
-        transform: translateX(-50%);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para la sección de la galería */
+.galeria-seccion {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Estilos para el contenedor de la galería */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para cada imagen en la galería */
+.imagen-contenedor {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para el botón de eliminar */
+.eliminar-imagen {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eliminar-imagen:hover {
+    background-color: #ff1a1a;
+}
+
+/* Estilos para los controles de la galería */
+.controles-galeria {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#url-imagen {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#añadir-imagen {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#añadir-imagen:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos responsive */
+@media (max-width: 600px) {
+    .imagen-contenedor {
+        width: 100%;
+        height: auto;
     }
 
-    25%{
-        transform: translateX(60%);
+    .controles-galeria {
+        flex-direction: column;
     }
 
-    50%{
-        transform: translateX(0%);
-    }
-
-    75%{
-        transform: translateX(-30%);
-    }
-
-    100% {
-        transform: translateX(-70%);
+    #url-imagen {
+        width: 100%;
     }
 }
