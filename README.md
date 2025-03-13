@@ -111,3 +111,6 @@ Se manipulan estilos directamente desde JavaScript.
 
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L81
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L292-L295
+
+### Enlace a la demo en GitHub Pages
+[Gunter's Forge](https://GunterMagno.github.io/Proyecto2LenguajedeMarcas/)
