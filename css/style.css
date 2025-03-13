@@ -8,8 +8,6 @@
     --color-background: #f9f9f9;
     --color-border: #8e8c8c;
     --font-family: 'Arial', sans-serif;
-
-    transition: background-color 0.5s, color 0.5s;
 }
 
 [data-theme="dark"] {
@@ -21,8 +19,6 @@
     --color-background: #222;
     --color-border: #8e8c8c;
     --font-family: 'Arial', sans-serif;
-
-    transition: background-color 0.5s, color 0.5s;
 }
 
 /* Resets */
