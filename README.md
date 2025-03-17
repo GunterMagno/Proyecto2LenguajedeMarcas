@@ -81,32 +81,54 @@ En este proyecto se han utilizado los siguientes métodos para seleccionar eleme
 - **querySelectorAll**: Selecciona todos los elementos que coinciden con el selector. Devuelve una NodeList.
 - **getElementById**: Selecciona un elemento por su ID. Es más rápido que `querySelector` para seleccionar por ID.
 
-# Ejemplos de Manipulación del DOM
+## Manipulación del DOM
 
-## 1. Seleccionar y Acceder a Elementos
+### 1. Seleccionar y Acceder a Elementos
+
+
+
+### 2. Crear y Añadir Nuevos Elementos
+
+
+
+### 3. Modificar Contenido y Atributos
+
+
+
+### 4. Eliminar Elementos
+
+
+
+### 5. Manipular Estilos
+
+
+
+## Ejemplos de Manipulación del DOM
+
+### 1. Seleccionar y Acceder a Elementos
 Se utilizan métodos como `querySelector`, `querySelectorAll` y `getElementById` para seleccionar y acceder a elementos del DOM.
 
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/75565807e07ba6d7514357911d9d9312018df817/scripts.js#L64-L65
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/75565807e07ba6d7514357911d9d9312018df817/scripts.js#L7
 
-## 2. Crear y Añadir Nuevos Elementos
+### 2. Crear y Añadir Nuevos Elementos
 Se crean nuevos elementos dinámicamente y se añaden al DOM.
 
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L118-L126
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L137-L139
 
-## 3. Modificar Contenido y Atributos
+### 3. Modificar Contenido y Atributos
 Se modifican el contenido y los atributos de elementos existentes.
 
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L21-L22
 
-## 4. Eliminar Elementos
+### 4. Eliminar Elementos
 Se eliminan elementos del DOM según criterios específicos.
 
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L132-L135
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L143-L147
 
-## 5. Manipular Estilos
+### 5. Manipular Estilos
 Se manipulan estilos directamente desde JavaScript.  
 
 https://github.com/GunterMagno/Proyecto2LenguajedeMarcas/blob/9852179fbaf9f17249f1e42b8ae79ba6ebc1d67b/js/scripts.js#L81
