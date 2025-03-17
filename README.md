@@ -100,7 +100,7 @@ let elemento1 = document.createElement('img')
 elemento.appendChild(elemento1)
 ````
 Lo que hacemos es crear una nueva variable por ejemplo ``elemento1`` que es de tipo **HTMLImageElement** con `document.createElement()` lo que hace es que puedas crear cualquier tipo de elemento para multiples funciones.
-Después para poder añadir este nodo a los nodos del padre (elemento que pongas entre parentesis). 
+Después para poder añadir este ``nodo`` a los ``nodos del padre`` (elemento que pongas entre parentesis). 
 
 ### 3. Modificar Contenido y Atributos
 
@@ -110,16 +110,26 @@ elemento1.src = 'img/prueba.png'
 
 elemento1.alt = 'Imagen de prueba'
 ````
-Tenemos ``elemento1`` ya creado y con el ``.src`` o ``.alt`` o con cualquier atributo/propiedad que pueda tener elemento1, al igualarlo cambiamos ese atributo por el nuevo que se ponga.
+Tenemos ``elemento1`` ya creado y con el ``.src`` o ``.alt`` o con cualquier atributo/propiedad que pueda tener ``elemento1``, al igualarlo cambiamos ese atributo por el nuevo que se ponga.
 En este caso lo que hacemos es cambiarle el ``src`` para ponerle la ruta de una imagen y cambiamos el ``alt`` para ponerle un texto alternativo por si la imagen no llegara a cargar o tuviera algún error.
 
 ### 4. Eliminar Elementos
 
-
+Para explicar como eliminar elementos vamos a hacerlos sobre los mismos elementos anteriores:
+````javascript
+elemento1.remove()
+````
+Con el ``elemento1`` anterior lo que hacemos es ``.remove()`` y asi es como se quitamos el elemento que viene anterior a la orden ``.remove()`` del DOM
 
 ### 5. Manipular Estilos
 
-
+Para manipular estilos en JavaScript es muy sencillo:
+````javascript
+elemento.style.backgroundColor = 'solid red'
+elemento.style.transform = `translateX(10vw)`
+elemento.style.border = '2px solid green'
+````
+Solo hace falta poner la etiqueta ``.style`` detras del elemento del cual quieres cambiar el estilo, en este caso tenemos el anterior ``elemento`` y cambiamos cualquier propiedad de CSS que queramos, por ejemplo aquí estamos cambiando el color que tiene de ``fondo`` a uno rojo, le estamos dando un ``transform`` y le ponemos un ``borde`` de dos píxeles verde  
 
 ## Ejemplos de Manipulación del DOM
 
