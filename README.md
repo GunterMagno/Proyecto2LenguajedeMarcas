@@ -85,15 +85,33 @@ En este proyecto se han utilizado los siguientes métodos para seleccionar eleme
 
 ### 1. Seleccionar y Acceder a Elementos
 
-
+Para seleccionar y acceder a los elementos lo hacemos de la siguiente manera:
+````javascript
+const elemento = document.querySelector('.clase')
+````
+En este caso guardamos el elemento en una variable llamada ``elemento`` y con ``document`` accedemos a la función ``querySelector`` que seleccionara el primer elemento que coincida con el selector (lo que esta en los parentesis), pueden ser ``clases``, ``ids`` ... 
 
 ### 2. Crear y Añadir Nuevos Elementos
 
+Para crear y añadir elementos se puede hacer de la siguiente manera: 
+````javascript
+let elemento1 = document.createElement('img')
 
+elemento.appendChild(elemento1)
+````
+Lo que hacemos es crear una nueva variable por ejemplo ``elemento1`` que es de tipo **HTMLImageElement** con `document.createElement()` lo que hace es que puedas crear cualquier tipo de elemento para multiples funciones.
+Después para poder añadir este nodo a los nodos del padre (elemento que pongas entre parentesis). 
 
 ### 3. Modificar Contenido y Atributos
 
+Teniendo los elementos creados y añadidos antes podemos ahora modificar el contenido o sus atributos:
+````javascript
+elemento1.src = 'img/prueba.png'
 
+elemento1.alt = 'Imagen de prueba'
+````
+Tenemos ``elemento1`` ya creado y con el ``.src`` o ``.alt`` o con cualquier atributo/propiedad que pueda tener elemento1, al igualarlo cambiamos ese atributo por el nuevo que se ponga.
+En este caso lo que hacemos es cambiarle el ``src`` para ponerle la ruta de una imagen y cambiamos el ``alt`` para ponerle un texto alternativo por si la imagen no llegara a cargar o tuviera algún error.
 
 ### 4. Eliminar Elementos
 
