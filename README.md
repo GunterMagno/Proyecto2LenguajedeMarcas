@@ -126,7 +126,9 @@ Con el ``elemento1`` anterior lo que hacemos es ``.remove()`` y asi es como se q
 Para manipular estilos en JavaScript es muy sencillo:
 ````javascript
 elemento.style.backgroundColor = 'solid red'
+
 elemento.style.transform = `translateX(10vw)`
+
 elemento.style.border = '2px solid green'
 ````
 Solo hace falta poner la etiqueta ``.style`` detras del elemento del cual quieres cambiar el estilo, en este caso tenemos el anterior ``elemento`` y cambiamos cualquier propiedad de CSS que queramos, por ejemplo aquí estamos cambiando el color que tiene de ``fondo`` a uno rojo, le estamos dando un ``transform`` y le ponemos un ``borde`` de dos píxeles verde  
