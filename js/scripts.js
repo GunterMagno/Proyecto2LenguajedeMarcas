@@ -496,3 +496,154 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+/* -------------------
+    Cesta interactiva
+   -------------------
+* */
+
+const popupCesta = document.createElement('div')
+popupCesta.style.position = 'fixed';
+popupCesta.style.top = '0%';
+popupCesta.style.left = '70.1%';
+popupCesta.style.width = '30%';
+popupCesta.style.height = '100%';
+popupCesta.style.backgroundColor = 'white'
+popupCesta.style.padding = '10px';
+popupCesta.style.borderRadius = '5px';
+popupCesta.style.zIndex = '100';
+popupCesta.style.overflowY = 'auto';
+popupCesta.style.display = 'none';
+document.body.appendChild(popupCesta);
+
+const tituloCesta = document.createElement('h3')
+tituloCesta.style.textAlign = 'center'
+tituloCesta.style.marginBottom = '10px'
+tituloCesta.textContent = 'Cesta de Compra'
+
+popupCesta.appendChild(tituloCesta);
+
+
+const productosCesta = document.createElement('div')
+productosCesta.style.position = 'fixed';
+productosCesta.style.top = '0%';
+productosCesta.style.left = '70.1%';
+productosCesta.style.width = '30%';
+productosCesta.style.height = '100%';
+
+
+const botonCesta = document.querySelector('.boton-cesta');
+botonCesta.addEventListener('click', (event) => {
+   popupCesta.style.display = 'block';
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+const barraBusqueda = document.querySelector('.input-busqueda'); // Barra de búsqueda del header
+const productos = document.querySelectorAll('.producto'); // Todos los productos
+const productos1 = document.querySelectorAll('.producto1'); // Todos los productos1
+
+// Crear el pop-up para mostrar los resultados
+const popupResultados = document.createElement('div');
+popupResultados.style.position = 'fixed';
+popupResultados.style.top = '50%';
+popupResultados.style.left = '50%';
+popupResultados.style.width = '60%';
+popupResultados.style.height = '70%';
+popupResultados.style.transform = 'translate(-50%, -50%)';
+popupResultados.style.backgroundColor = 'white';
+popupResultados.style.padding = '20px';
+popupResultados.style.boxShadow = '0px 0px 20px rgba(0,0,0,0.5)';
+popupResultados.style.overflowY = 'auto';
+popupResultados.style.display = 'none';
+popupResultados.style.zIndex = '1000';
+popupResultados.style.borderRadius = '10px';
+document.body.appendChild(popupResultados);
+
+// Título del pop-up
+const tituloPopup = document.createElement('h3');
+tituloPopup.style.textAlign = 'center';
+tituloPopup.style.marginBottom = '10px';
+popupResultados.appendChild(tituloPopup);
+
+// Contenedor interno para productos
+const contenidoPopup = document.createElement('div');
+contenidoPopup.style.display = 'flex';
+contenidoPopup.style.flexWrap = 'wrap';
+contenidoPopup.style.gap = '10px';
+contenidoPopup.style.justifyContent = 'center';
+popupResultados.appendChild(contenidoPopup);
+
+// Función para filtrar productos y mostrar pop-up
+function mostrarResultados() {
+    const textoBusqueda = barraBusqueda.value.trim().toLowerCase();
+    contenidoPopup.innerHTML = '';
+    let contador = 0;
+
+    productos.forEach(producto => {
+        const nombreProducto = producto.querySelector('p').textContent.toLowerCase();
+        if (nombreProducto.includes(textoBusqueda)) {
+            const productoClonado = producto.cloneNode(true);
+            productoClonado.style.maxWidth = '400px';
+            productoClonado.style.width = '100%';
+            contenidoPopup.appendChild(productoClonado);
+            contador++;
+        }
+    });
+
+    productos1.forEach(producto => {
+        const nombreProducto = producto.querySelector('p').textContent.toLowerCase();
+        if (nombreProducto.includes(textoBusqueda)) {
+            const productoClonado = producto.cloneNode(true);
+            productoClonado.style.maxWidth = '400px';
+            productoClonado.style.width = '100%';
+            contenidoPopup.appendChild(productoClonado);
+            contador++;
+        }
+    });
+
+    if (contador > 0) {
+        tituloPopup.textContent = `Resultados de la búsqueda: "${barraBusqueda.value}" (${contador} encontrados)`;
+        popupResultados.style.display = 'block';
+    } else {
+        popupResultados.style.display = 'none';
+    }
+}
+
+barraBusqueda.addEventListener('input', mostrarResultados);
+
+barraBusqueda.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Evitar recarga de la página
+        mostrarResultados();
+    }
+});
+
+// Cerrar pop-up al hacer clic fuera
+window.addEventListener('click', (event) => {
+    if (!popupResultados.contains(event.target) && event.target !== barraBusqueda) {
+        popupResultados.style.display = 'none';
+    }
+});
+*/
