@@ -503,147 +503,406 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------
 * */
 
-const popupCesta = document.createElement('div')
-popupCesta.style.position = 'fixed';
-popupCesta.style.top = '0%';
-popupCesta.style.left = '70.1%';
-popupCesta.style.width = '30%';
-popupCesta.style.height = '100%';
-popupCesta.style.backgroundColor = 'white'
-popupCesta.style.padding = '10px';
-popupCesta.style.borderRadius = '5px';
-popupCesta.style.zIndex = '100';
-popupCesta.style.overflowY = 'auto';
-popupCesta.style.display = 'none';
-document.body.appendChild(popupCesta);
+// Crear el popup de la cesta
+function crearPopupCesta() {
+    const popup = document.createElement('div');
+    popup.id = 'popup-cesta';
+    popup.style.position = 'fixed';
+    popup.style.top = '0';
+    popup.style.right = '-35%';
+    popup.style.width = '35%';
+    popup.style.height = '100vh';
+    popup.style.backgroundColor = '#f8f8f8';
+    popup.style.padding = '20px';
+    popup.style.borderRadius = '5px 0 0 5px';
+    popup.style.zIndex = '1000';
+    popup.style.overflowY = 'auto';
+    popup.style.transition = 'right 0.3s ease';
+    popup.style.boxShadow = '-5px 0 15px rgba(0,0,0,0.1)';
+    popup.style.borderLeft = '1px solid #ddd';
+    document.body.appendChild(popup);
 
-const tituloCesta = document.createElement('h3')
-tituloCesta.style.textAlign = 'center'
-tituloCesta.style.marginBottom = '10px'
-tituloCesta.textContent = 'Cesta de Compra'
+    return popup;
+}
 
-popupCesta.appendChild(tituloCesta);
+// Crear el título de la cesta
+function crearTituloCesta(popup) {
+    const titulo = document.createElement('h3');
+    titulo.style.textAlign = 'center';
+    titulo.style.margin = '0 0 20px 0';
+    titulo.style.paddingBottom = '15px';
+    titulo.style.borderBottom = '2px solid #e1e1e1';
+    titulo.style.color = '#333';
+    titulo.style.fontSize = '1.5em';
+    titulo.textContent = 'Tu Cesta de Compra';
+    popup.appendChild(titulo);
 
+    return titulo;
+}
 
-const productosCesta = document.createElement('div')
-productosCesta.style.position = 'fixed';
-productosCesta.style.top = '0%';
-productosCesta.style.left = '70.1%';
-productosCesta.style.width = '30%';
-productosCesta.style.height = '100%';
+// Crear botón para cerrar la cesta
+function crearBotonCerrar(titulo, popup) {
+    const boton = document.createElement('button');
+    boton.innerHTML = '×';
+    boton.style.position = 'absolute';
+    boton.style.top = '15px';
+    boton.style.right = '15px';
+    boton.style.background = 'none';
+    boton.style.border = 'none';
+    boton.style.fontSize = '28px';
+    boton.style.color = '#666';
+    boton.style.cursor = 'pointer';
 
+    boton.addEventListener('click', () => {
+        popup.style.right = '-35%';
+        guardarCesta();
+    });
 
-const botonCesta = document.querySelector('.boton-cesta');
-botonCesta.addEventListener('click', (event) => {
-   popupCesta.style.display = 'block';
-})
+    titulo.appendChild(boton);
+}
 
+// Crear contenedor de productos
+function crearContenedorProductos(popup) {
+    const contenedor = document.createElement('div');
+    contenedor.id = 'productos-cesta';
+    contenedor.style.maxHeight = 'calc(100vh - 250px)';
+    contenedor.style.overflowY = 'auto';
+    contenedor.style.padding = '0 15px';
+    contenedor.style.display = 'flex';
+    contenedor.style.flexDirection = 'column';
+    contenedor.style.alignItems = 'center';
+    contenedor.style.gap = '15px';
+    popup.appendChild(contenedor);
 
+    return contenedor;
+}
 
+// Crear sección del total y botón de pago
+function crearSeccionTotal(popup) {
+    const seccion = document.createElement('div');
+    seccion.style.marginTop = '20px';
+    seccion.style.paddingTop = '20px';
+    seccion.style.borderTop = '2px solid #e1e1e1';
 
+    const totalTexto = document.createElement('h4');
+    totalTexto.style.display = 'flex';
+    totalTexto.style.justifyContent = 'space-between';
+    totalTexto.style.margin = '0 0 15px 0';
+    totalTexto.style.fontSize = '1.2em';
+    totalTexto.innerHTML = '<span>Total:</span> <span id="total-precio" style="font-weight: bold; color: #d9534f;">0 €</span>';
+    seccion.appendChild(totalTexto);
 
+    const botonPagar = document.createElement('button');
+    botonPagar.textContent = 'Realizar Pedido';
+    botonPagar.style.display = 'block';
+    botonPagar.style.width = '100%';
+    botonPagar.style.padding = '12px';
+    botonPagar.style.marginTop = '10px';
+    botonPagar.style.backgroundColor = '#5cb85c';
+    botonPagar.style.color = 'white';
+    botonPagar.style.border = 'none';
+    botonPagar.style.borderRadius = '4px';
+    botonPagar.style.fontSize = '1.1em';
+    botonPagar.style.cursor = 'pointer';
 
+    botonPagar.addEventListener('click', () => {
+        document.getElementById('productos-cesta').innerHTML = '';
+        document.getElementById('total-precio').textContent = '0 €';
+        localStorage.removeItem('cestaForjaGunter');
+        alert('Pedido realizado con éxito. ¡Gracias por su compra!');
+        popup.style.right = '-35%';
+    });
 
+    seccion.appendChild(botonPagar);
+    popup.appendChild(seccion);
+}
 
+// Crear un elemento de producto para la cesta
+function crearElementoProducto(nombre, precio, imagen, cantidad = 1) {
+    const productoDiv = document.createElement('div');
+    productoDiv.className = 'producto';
+    productoDiv.dataset.nombre = nombre;
+    productoDiv.dataset.precio = precio;
+    productoDiv.dataset.imagen = imagen;
+    productoDiv.style.width = '90%';
+    productoDiv.style.padding = '15px';
+    productoDiv.style.backgroundColor = 'white';
+    productoDiv.style.borderRadius = '5px';
+    productoDiv.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+    productoDiv.style.display = 'flex';
+    productoDiv.style.justifyContent = 'space-between';
+    productoDiv.style.alignItems = 'center';
+    productoDiv.style.gap = '15px';
 
+    const imgProducto = document.createElement('img');
+    imgProducto.src = imagen;
+    imgProducto.style.width = '60px';
+    imgProducto.style.height = '60px';
+    imgProducto.style.objectFit = 'cover';
+    imgProducto.style.borderRadius = '3px';
 
+    const infoProducto = document.createElement('div');
+    infoProducto.style.flexGrow = '1';
+    infoProducto.style.display = 'flex';
+    infoProducto.style.flexDirection = 'column';
+    infoProducto.style.justifyContent = 'center';
+    infoProducto.innerHTML = `
+        <div style="font-weight: bold; margin-bottom: 5px;">${nombre}</div>
+        <div style="color: #d9534f; font-weight: bold;">${precio} €</div>
+    `;
 
+    const controlesCantidad = document.createElement('div');
+    controlesCantidad.style.display = 'flex';
+    controlesCantidad.style.alignItems = 'center';
+    controlesCantidad.style.gap = '8px';
 
+    const botonMenos = document.createElement('button');
+    botonMenos.textContent = '-';
+    botonMenos.style.padding = '5px 10px';
+    botonMenos.style.backgroundColor = '#f0f0f0';
+    botonMenos.style.border = '1px solid #ddd';
+    botonMenos.style.borderRadius = '3px';
+    botonMenos.style.cursor = 'pointer';
 
+    botonMenos.addEventListener('click', () => {
+        const input = productoDiv.querySelector('.cantidad-producto');
+        if (parseInt(input.value) > 1) {
+            input.value = parseInt(input.value) - 1;
+            calcularTotal();
+            guardarCesta();
+        }
+    });
 
+    const inputCantidad = document.createElement('input');
+    inputCantidad.type = 'number';
+    inputCantidad.className = 'cantidad-producto';
+    inputCantidad.value = cantidad;
+    inputCantidad.min = '1';
+    inputCantidad.style.width = '50px';
+    inputCantidad.style.textAlign = 'center';
+    inputCantidad.style.padding = '5px';
+    inputCantidad.style.border = '1px solid #ddd';
+    inputCantidad.style.borderRadius = '3px';
 
+    inputCantidad.addEventListener('change', () => {
+        calcularTotal();
+        guardarCesta();
+    });
 
+    const botonMas = document.createElement('button');
+    botonMas.textContent = '+';
+    botonMas.style.padding = '5px 10px';
+    botonMas.style.backgroundColor = '#f0f0f0';
+    botonMas.style.border = '1px solid #ddd';
+    botonMas.style.borderRadius = '3px';
+    botonMas.style.cursor = 'pointer';
 
+    botonMas.addEventListener('click', () => {
+        const input = productoDiv.querySelector('.cantidad-producto');
+        input.value = parseInt(input.value) + 1;
+        calcularTotal();
+        guardarCesta();
+    });
 
+    const botonEliminar = document.createElement('button');
+    botonEliminar.innerHTML = '&times;';
+    botonEliminar.style.padding = '5px 10px';
+    botonEliminar.style.backgroundColor = '#f8d7da';
+    botonEliminar.style.color = '#721c24';
+    botonEliminar.style.border = 'none';
+    botonEliminar.style.borderRadius = '3px';
+    botonEliminar.style.cursor = 'pointer';
 
+    botonEliminar.addEventListener('click', () => {
+        productoDiv.style.animation = 'desaparecer 0.3s forwards';
+        setTimeout(() => {
+            productoDiv.remove();
+            calcularTotal();
+            guardarCesta();
+        }, 300);
+    });
 
+    controlesCantidad.appendChild(botonMenos);
+    controlesCantidad.appendChild(inputCantidad);
+    controlesCantidad.appendChild(botonMas);
 
+    productoDiv.appendChild(imgProducto);
+    productoDiv.appendChild(infoProducto);
+    productoDiv.appendChild(controlesCantidad);
+    productoDiv.appendChild(botonEliminar);
 
-/*
-const barraBusqueda = document.querySelector('.input-busqueda'); // Barra de búsqueda del header
-const productos = document.querySelectorAll('.producto'); // Todos los productos
-const productos1 = document.querySelectorAll('.producto1'); // Todos los productos1
+    return productoDiv;
+}
 
-// Crear el pop-up para mostrar los resultados
-const popupResultados = document.createElement('div');
-popupResultados.style.position = 'fixed';
-popupResultados.style.top = '50%';
-popupResultados.style.left = '50%';
-popupResultados.style.width = '60%';
-popupResultados.style.height = '70%';
-popupResultados.style.transform = 'translate(-50%, -50%)';
-popupResultados.style.backgroundColor = 'white';
-popupResultados.style.padding = '20px';
-popupResultados.style.boxShadow = '0px 0px 20px rgba(0,0,0,0.5)';
-popupResultados.style.overflowY = 'auto';
-popupResultados.style.display = 'none';
-popupResultados.style.zIndex = '1000';
-popupResultados.style.borderRadius = '10px';
-document.body.appendChild(popupResultados);
-
-// Título del pop-up
-const tituloPopup = document.createElement('h3');
-tituloPopup.style.textAlign = 'center';
-tituloPopup.style.marginBottom = '10px';
-popupResultados.appendChild(tituloPopup);
-
-// Contenedor interno para productos
-const contenidoPopup = document.createElement('div');
-contenidoPopup.style.display = 'flex';
-contenidoPopup.style.flexWrap = 'wrap';
-contenidoPopup.style.gap = '10px';
-contenidoPopup.style.justifyContent = 'center';
-popupResultados.appendChild(contenidoPopup);
-
-// Función para filtrar productos y mostrar pop-up
-function mostrarResultados() {
-    const textoBusqueda = barraBusqueda.value.trim().toLowerCase();
-    contenidoPopup.innerHTML = '';
-    let contador = 0;
+// Calcular el total de la cesta
+function calcularTotal() {
+    let total = 0;
+    const productos = document.querySelectorAll('#productos-cesta .producto');
 
     productos.forEach(producto => {
-        const nombreProducto = producto.querySelector('p').textContent.toLowerCase();
-        if (nombreProducto.includes(textoBusqueda)) {
-            const productoClonado = producto.cloneNode(true);
-            productoClonado.style.maxWidth = '400px';
-            productoClonado.style.width = '100%';
-            contenidoPopup.appendChild(productoClonado);
-            contador++;
-        }
+        const precio = parseFloat(producto.dataset.precio);
+        const cantidad = parseInt(producto.querySelector('.cantidad-producto').value);
+        total += precio * cantidad;
     });
 
-    productos1.forEach(producto => {
-        const nombreProducto = producto.querySelector('p').textContent.toLowerCase();
-        if (nombreProducto.includes(textoBusqueda)) {
-            const productoClonado = producto.cloneNode(true);
-            productoClonado.style.maxWidth = '400px';
-            productoClonado.style.width = '100%';
-            contenidoPopup.appendChild(productoClonado);
-            contador++;
-        }
+    document.getElementById('total-precio').textContent = total.toFixed(2) + ' €';
+}
+
+// Guardar la cesta en localStorage
+function guardarCesta() {
+    const productos = [];
+    const elementosProducto = document.querySelectorAll('#productos-cesta .producto');
+
+    elementosProducto.forEach(producto => {
+        productos.push({
+            nombre: producto.dataset.nombre,
+            precio: producto.dataset.precio,
+            imagen: producto.dataset.imagen,
+            cantidad: producto.querySelector('.cantidad-producto').value
+        });
     });
 
-    if (contador > 0) {
-        tituloPopup.textContent = `Resultados de la búsqueda: "${barraBusqueda.value}" (${contador} encontrados)`;
-        popupResultados.style.display = 'block';
-    } else {
-        popupResultados.style.display = 'none';
+    localStorage.setItem('cestaForjaGunter', JSON.stringify(productos));
+}
+
+// Cargar la cesta desde localStorage
+function cargarCesta() {
+    const cestaGuardada = localStorage.getItem('cestaForjaGunter');
+    if (cestaGuardada) {
+        const productos = JSON.parse(cestaGuardada);
+        const contenedor = document.getElementById('productos-cesta');
+
+        productos.forEach(producto => {
+            const elemento = crearElementoProducto(
+                producto.nombre,
+                producto.precio,
+                producto.imagen,
+                producto.cantidad
+            );
+            contenedor.appendChild(elemento);
+        });
+
+        calcularTotal();
     }
 }
 
-barraBusqueda.addEventListener('input', mostrarResultados);
+// Añadir un producto a la cesta
+function agregarProducto(nombre, precio, imagen) {
+    const productosEnCesta = document.querySelectorAll('#productos-cesta .producto');
+    let productoExistente = null;
 
-barraBusqueda.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Evitar recarga de la página
-        mostrarResultados();
-    }
-});
+    productosEnCesta.forEach(producto => {
+        if (producto.dataset.nombre === nombre) {
+            productoExistente = producto;
+        }
+    });
 
-// Cerrar pop-up al hacer clic fuera
-window.addEventListener('click', (event) => {
-    if (!popupResultados.contains(event.target) && event.target !== barraBusqueda) {
-        popupResultados.style.display = 'none';
+    if (productoExistente) {
+        const input = productoExistente.querySelector('.cantidad-producto');
+        input.value = parseInt(input.value) + 1;
+    } else {
+        const nuevoProducto = crearElementoProducto(nombre, precio, imagen);
+        document.getElementById('productos-cesta').appendChild(nuevoProducto);
     }
-});
-*/
+
+    calcularTotal();
+    guardarCesta();
+}
+
+// Crear botón "Añadir al carrito" para un producto
+function crearBotonAñadir(producto) {
+    const boton = document.createElement('button');
+    boton.textContent = 'Añadir al carrito';
+    boton.style.padding = '8px 15px';
+    boton.style.backgroundColor = '#337ab7';
+    boton.style.color = 'white';
+    boton.style.border = 'none';
+    boton.style.borderRadius = '4px';
+    boton.style.marginTop = '10px';
+    boton.style.cursor = 'pointer';
+    boton.id = 'boton-añadir';
+
+    boton.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        evento.stopPropagation();
+
+        const nombre = producto.querySelector('p:first-of-type').textContent;
+        const precio = producto.querySelector('.precio, .precio1').textContent.replace('€', '').trim();
+        const imagen = producto.querySelector('img').src;
+
+        agregarProducto(nombre, precio, imagen);
+        document.getElementById('popup-cesta').style.right = '0';
+    });
+
+    return boton;
+}
+
+// Añadir botones "Añadir al carrito" a todos los productos
+function añadirBotonesProductos() {
+    const productos = document.querySelectorAll('.producto, .producto1');
+
+    productos.forEach(producto => {
+        const boton = crearBotonAñadir(producto);
+        const contenedor = producto.querySelector('a') || producto;
+        contenedor.appendChild(boton);
+
+        if (contenedor.tagName === 'A') {
+            contenedor.addEventListener('click', (evento) => {
+                if (evento.target.tagName === 'BUTTON') {
+                    evento.preventDefault();
+                }
+            });
+        }
+    });
+}
+
+// Crear la animación para eliminar productos
+function crearAnimacionEliminar() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes desaparecer {
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Configurar eventos del popup
+function configurarEventosCesta(popup) {
+    document.addEventListener('click', (evento) => {
+        const botonCesta = document.querySelector('nav li a[href="#"] img[alt="Imagen Carrito"]');
+        if (evento.target !== botonCesta && !popup.contains(evento.target)) {
+            popup.style.right = '-35%'; // Ajustado al nuevo tamaño
+            guardarCesta();
+        }
+    });
+
+    const botonCesta = document.querySelector('nav li a[href="#"] img[alt="Imagen Carrito"]');
+    if (botonCesta) {
+        botonCesta.parentElement.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            popup.style.right = '0';
+        });
+    }
+}
+
+// Inicializar la cesta
+function inicializarCesta() {
+    crearAnimacionEliminar();
+
+    const popup = crearPopupCesta();
+    const titulo = crearTituloCesta(popup);
+    crearBotonCerrar(titulo, popup);
+    crearContenedorProductos(popup);
+    crearSeccionTotal(popup);
+
+    configurarEventosCesta(popup);
+    cargarCesta();
+    añadirBotonesProductos();
+}
+
+// Iniciar todo
+document.addEventListener('DOMContentLoaded', inicializarCesta);
